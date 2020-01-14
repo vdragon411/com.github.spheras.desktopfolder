@@ -1,0 +1,26 @@
+diff --git a/data/meson.build b/data/meson.build
+index a97e7f5..093e5d6 100644
+--- a/data/meson.build
++++ b/data/meson.build
+@@ -48,7 +48,7 @@ i18n.merge_file (
+     input: desktop_exe,
+     output: meson.project_name() + '-autostart.desktop',
+     install: true,
+-    install_dir: '/etc/xdg/autostart',
++    install_dir: 'app/etc/xdg/autostart',
+     po_dir: join_paths(meson.source_root (), 'po'),
+     type: 'desktop'
+ )
+diff --git a/meson.build b/meson.build
+index be177be..edd16bb 100644
+--- a/meson.build
++++ b/meson.build
+@@ -92,7 +92,7 @@ executable(
+         dependency('json-glib-1.0'),
+         dependency('gdk-pixbuf-2.0'),
+         dependency('libwnck-3.0'),
+-        dependency('gtksourceview-3.0'),
++        dependency('gtksourceview-4'),
+         m_dep
+     ],
+     install : true
